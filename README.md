@@ -69,7 +69,6 @@ y = dataset1[['Output']].values
 ```
 dataset1.head()
 ```
-<img width="457" height="269" alt="image" src="https://github.com/user-attachments/assets/90d5cc61-03c0-41c3-bce9-667942d04410" />
 
 ```
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=33)
@@ -139,16 +138,12 @@ def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
 ```
 train_model(ai_brain, X_train_tensor, y_train_tensor, criterion, optimizer)
 ```
-<img width="761" height="610" alt="image" src="https://github.com/user-attachments/assets/c97903fc-ef35-4a20-932d-8c3d0f754efa" />
 
 ```
 with torch.no_grad():
     test_loss = criterion(ai_brain(X_test_tensor), y_test_tensor)
     print(f'Test Loss: {test_loss.item():.6f}')
 ```
-
-<img width="291" height="69" alt="image" src="https://github.com/user-attachments/assets/5652266c-59ed-48cd-b8cf-b5c0bd303c7f" />
-
 
 ```
 loss_df = pd.DataFrame(ai_brain.history)
@@ -164,27 +159,34 @@ plt.show()
 
 ```
 
-<img width="417" height="61" alt="image" src="https://github.com/user-attachments/assets/d34d77a7-6143-4b3c-aff8-3c8ee589639d" />
 
 ```
 X_n1_1 = torch.tensor([[9]], dtype=torch.float32)
 prediction = ai_brain(torch.tensor(scaler.transform(X_n1_1), dtype=torch.float32)).item()
 print(f'Prediction: {prediction}')
 ```
-<img width="417" height="61" alt="image" src="https://github.com/user-attachments/assets/7829da6b-69ab-4754-9120-d88f6dc94de6" />
+
 
 
 
 ### Dataset Information
-Include screenshot of the generated data
+<img width="431" height="558" alt="image" src="https://github.com/user-attachments/assets/7b8c9165-b470-438a-835a-7d7dcc9c3631" />
+
 
 ### OUTPUT
 
+<img width="457" height="269" alt="image" src="https://github.com/user-attachments/assets/90d5cc61-03c0-41c3-bce9-667942d04410" />
+<img width="257" height="51" alt="image" src="https://github.com/user-attachments/assets/3c22f24a-42cd-45fb-8b8a-f8b8936d5c55" />
+
+
 ### Training Loss Vs Iteration Plot
-Include your plot here
+
+<img width="761" height="610" alt="image" src="https://github.com/user-attachments/assets/c97903fc-ef35-4a20-932d-8c3d0f754efa" />
 
 ### New Sample Data Prediction
-Include your sample input and output here
+
+<img width="417" height="61" alt="image" src="https://github.com/user-attachments/assets/d34d77a7-6143-4b3c-aff8-3c8ee589639d" />
+
 
 ## RESULT
 Thus, a neural network regression model was successfully developed and trained using PyTorch.
